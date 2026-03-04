@@ -1,11 +1,10 @@
 import { UsersProvider } from "./context/users/index";
-import { UserCardCollection } from "./pages/UserCardCollection";
+import { MainScene } from "./pages/MainScene";
 
 function App() {
   return (
     <UsersProvider>
-      <h1>User Carousel</h1>
-      <UserCardCollection />
+        <MainScene />
     </UsersProvider>
   )
 }
