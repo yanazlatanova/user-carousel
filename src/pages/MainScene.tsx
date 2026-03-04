@@ -7,7 +7,7 @@ import { useUsers } from '../context/users'
 export const MainScene: React.FC = () => {
     const { data } = useUsers()
     return (
-        <Canvas style={{ width: '100vw', height: '100vh' }}>
+        <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [0, 0, 12], fov: 80 }}>
             <OrbitControls />
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
