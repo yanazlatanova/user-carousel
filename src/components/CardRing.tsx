@@ -10,7 +10,7 @@ export const CardRing: React.FC<Props> = ({ users }) => {
     if (users.length === 0) return null
     const userCount = users.length
 
-    const ring_length = userCount * 4
+    const ring_length = userCount * 6
     // ring_length = R * 2 * PI
     const R = ring_length / (Math.PI * 2) // Adjust the radius based on the number of users
 
@@ -18,13 +18,13 @@ export const CardRing: React.FC<Props> = ({ users }) => {
         <group>
             {users.map((user, i) => {
                 const radians = (i / userCount) * (Math.PI * 2)  // angle in radians not degrees       
-                const x = R * Math.cos(radians)
-                const z = R * Math.sin(radians)
+                const x = R * Math.sin(radians)
+                const z = R * Math.cos(radians)
                 const y = 0 // rotate on the XZ plane only
 
                 return (
-                    <mesh key={user.id} position={[x, y, z]}>
-                        <sphereGeometry args={[1, 32, 32]} />
+                    <mesh key={user.id} position={[x, y, z]} rotation={[0, radians, 0]}>
+                        <boxGeometry args={[5, 5, 1]} />
                         <meshStandardMaterial color="yellow" />
                         <Html>{user.name}</Html>
                     </mesh>
