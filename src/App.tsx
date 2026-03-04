@@ -1,11 +1,11 @@
 import { UsersProvider } from "./context/users/index";
-import { Home } from "./pages/Home"
+import { UserCardCollection } from "./pages/UserCardCollection";
 
 function App() {
   return (
     <UsersProvider>
       <h1>User Carousel</h1>
-      <Home />
+      <UserCardCollection />
     </UsersProvider>
   )
 }
