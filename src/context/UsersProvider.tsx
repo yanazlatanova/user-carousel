@@ -13,8 +13,8 @@ export const UsersProvider: React.FC<React.PropsWithChildren<{}>> = ({ children 
         setIsError(false)   
         try {
             const users = await fetchUsers()
-            setData(users)
-        }   
+            setData(Array.isArray(users) ? users : [users]) // in case of one value
+        }
         catch (error) {
             console.error('Error fetching users:', error)
             setIsError(true)
