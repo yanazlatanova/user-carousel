@@ -1,7 +1,6 @@
 import React from "react";
 import type { User } from "../types/user";
 import { getUserColor } from "../utils/userColor";
-import "../styles/UserCard.css"; // Assuming you have some basic styles for the card
 
 interface Props {
   user: User;

@@ -1,7 +1,7 @@
+
 .card {
-  margin: 10px auto;
   width: 300px;
-  border-radius: 12px;
+  border-radius: 5%;
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   font-family: sans-serif;
@@ -27,7 +27,7 @@
 }
 
 .card-name   { font-weight: 700; }
-.card-username { font-size: 12px; opacity: 0.8; }
+.card-username { font-size: 12px; font-weight: 500; }
 .card-body { padding: 8px 16px 16px; }
 
 
@@ -36,6 +36,6 @@
   font-size: 10px; 
   font-weight: 600; 
   text-transform: uppercase; 
-  color: #94a3b8; 
+  color: #646a72; 
 }
 .field a     { color: #2563eb; }
