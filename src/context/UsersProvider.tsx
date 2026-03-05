@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback} from 'react'
+import React, { useState, useEffect } from 'react'
 import { fetchUsers } from '../api/users'
 import type { User } from '../types/user'
 import { UsersContext }  from './UsersContext'
@@ -8,7 +8,7 @@ export const UsersProvider: React.FC<React.PropsWithChildren<{}>> = ({ children 
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [isError, setIsError] = useState<boolean>(false)
 
-    const loadUsers = useCallback(async () => {
+    const loadUsers = async () => {
         setIsLoading(true)
         setIsError(false)   
         try {
@@ -21,14 +21,14 @@ export const UsersProvider: React.FC<React.PropsWithChildren<{}>> = ({ children 
         } finally {
             setIsLoading(false)
         }
-    }, [])
+    }
 
     useEffect(() => {
         loadUsers()
-    }, [loadUsers])
+    }, [])
 
   return (
-    <UsersContext.Provider value={{ data, isLoading, isError }}>
+    <UsersContext.Provider value={{ data, isLoading, isError, reload: loadUsers }}>
       {children}
     </UsersContext.Provider>
   )

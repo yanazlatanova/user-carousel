@@ -5,7 +5,11 @@ import { CardRing } from '../components/CardRing'
 import { useUsers } from '../context'
 
 export const MainScene: React.FC = () => {
-    const { data } = useUsers()
+    const { data, isError, isLoading, reload } = useUsers()
+
+    if (isError) { return <div>An error occurred while fatching data. <button onClick={() => { reload() }}>Retry</button> </div> }
+    if (isLoading) { return <p> Loading...</p> }
+
     return (
         <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [0, 0, 15], fov: 80 }}>
             <OrbitControls />
