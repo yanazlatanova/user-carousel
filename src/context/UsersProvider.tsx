@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { fetchUsers } from '../api/users'
 import type { User } from '../types/user'
-import { UsersContext }  from './UsersContext'
+import { UsersContext } from './UsersContext'
 
 export const UsersProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     const [data, setData] = useState<User[] | undefined>()
@@ -10,13 +10,13 @@ export const UsersProvider: React.FC<React.PropsWithChildren<{}>> = ({ children 
 
     const loadUsers = async () => {
         setIsLoading(true)
-        setIsError(false)   
+        setIsError(false)
         try {
             const users = await fetchUsers()
             setData(Array.isArray(users) ? users : [users]) // in case of one value
         }
         catch (error) {
-            console.error('Error fetching users:', error)
+            console.error(error)
             setIsError(true)
         } finally {
             setIsLoading(false)
@@ -27,9 +27,9 @@ export const UsersProvider: React.FC<React.PropsWithChildren<{}>> = ({ children 
         loadUsers()
     }, [])
 
-  return (
-    <UsersContext.Provider value={{ data, isLoading, isError, reload: loadUsers }}>
-      {children}
-    </UsersContext.Provider>
-  )
+    return (
+        <UsersContext.Provider value={{ data, isLoading, isError, reload: loadUsers }}>
+            {children}
+        </UsersContext.Provider>
+    )
 }

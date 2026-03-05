@@ -5,7 +5,8 @@ import type { UsersContextValue } from './UsersContext'
 export const useUsers = (): UsersContextValue => {
     const context = React.useContext(UsersContext)
     if(!context) {
-        throw new Error('useUsers must be used within a UsersProvider')
+        console.error("useUsers have to be used inside a UsersProvider");
+        throw new Error('UsersContex error encountred.')
     }
     return context
 }
