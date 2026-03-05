@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback} from 'react'
-import { fetchUsers } from '../../api/users'
-import type { User } from '../../types/user'
-import UsersContext from './UsersContext'
+import { fetchUsers } from '../api/users'
+import type { User } from '../types/user'
+import { UsersContext }  from './UsersContext'
 
 export const UsersProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     const [data, setData] = useState<User[] | undefined>()

@@ -1,5 +1,6 @@
 import React from 'react'
-import UsersContext, { type UsersContextValue } from './UsersContext'
+import { UsersContext } from './UsersContext'
+import type { UsersContextValue } from './UsersContext'
 
 export const useUsers = (): UsersContextValue => {
     const context = React.useContext(UsersContext)
@@ -8,5 +9,3 @@ export const useUsers = (): UsersContextValue => {
     }
     return context
 }
-
-export default UsersContext

@@ -1,5 +1,5 @@
 import React from "react"
-import { useUsers } from "../context/users/index"
+import { useUsers } from "../context"
 import { UserCard }  from "../components/UserCard"
 
 

@@ -1,4 +1,4 @@
-import { UsersProvider } from "./context/users/index";
+import { UsersProvider } from "./context";
 import { MainScene } from "./pages/MainScene";
 
 function App() {

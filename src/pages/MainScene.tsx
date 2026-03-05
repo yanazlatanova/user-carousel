@@ -2,7 +2,7 @@ import React from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { CardRing } from '../components/CardRing'
-import { useUsers } from '../context/users'
+import { useUsers } from '../context'
 
 export const MainScene: React.FC = () => {
     const { data } = useUsers()
